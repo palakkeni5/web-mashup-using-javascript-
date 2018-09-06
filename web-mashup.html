@@ -1,0 +1,31 @@
+<html>
+   <head>
+      <meta content = "text/html; charset = ISO-8859-1" http-equiv = "content-type">
+      <script type = "application/javascript" src="location.js" ></script>
+      <script type = "application/javascript" src="weather.js" ></script>
+      <title>JSON AJAX</title>
+   </head>
+    
+   <body>
+      <h1>Location Details</h1>
+        <label>Enter the location</label>
+        <input type="text" id="location">
+        <div class = "central">
+            <button type = "button" onclick = "loadLocation()"> Load Location </button>
+         </div>
+      <table class = "src">
+          <h3>ADDRESS :</h3>
+          <h3 id= "Address"></h3>
+         <tr><th>Lattitude</th><th>Longitude</th></tr>
+         <tr><td><div id = "Lattitude"></div></td>
+         <td><div id = "Longitude"></div></td></tr>
+      </table>
+      <div class = "central">
+            <button type = "button" onclick = "loadWeather()"> Load Weather </button>
+      </div>
+      <h4>
+      <div id="apparentTemp"> </div>
+      <div id="Temp"> </div>
+      </h4>
+   </body>
+</html>
