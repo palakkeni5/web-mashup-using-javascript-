@@ -6,7 +6,7 @@ function loadWeather(){
     }
     else{
         var data_file = "https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/3b2f2bfdcae86d91b774bafb2a83b589/"+lat+","+lng;
-        //alert(data_file);
+        
         var http_request = new XMLHttpRequest();
         try{
          // Opera 8.0+, Firefox, Chrome, Safari
@@ -38,7 +38,7 @@ function loadWeather(){
                 // Javascript function JSON.parse to parse JSON data
                 
                 var jsonObj = JSON.parse(http_request.responseText);
-                alert(data_file);
+               
                 // jsonObj variable now contains the data structure and can
                 // be accessed as jsonObj.name and jsonObj.country.
                 document.getElementById("apparentTemp").innerHTML ="Apparent Temperature : "+jsonObj.currently.temperature + " F";

@@ -1,10 +1,10 @@
 function loadLocation(){
 
     var geocode= document.getElementById("location").value;
-    //alert(geocode);
+    
     geocode=encodeURIComponent(geocode);
     var data_file = "https://maps.googleapis.com/maps/api/geocode/json?address="+geocode;
-    //alert(data_file);
+    
     var http_request = new XMLHttpRequest();
     try{
        // Opera 8.0+, Firefox, Chrome, Safari
@@ -33,12 +33,9 @@ function loadLocation(){
     http_request.onreadystatechange = function(){
     
     if (http_request.readyState == 4  ){
-       // Javascript function JSON.parse to parse JSON data
        
        var jsonObj = JSON.parse(http_request.responseText);
 
-       // jsonObj variable now contains the data structure and can
-       // be accessed as jsonObj.name and jsonObj.country.
        document.getElementById("Lattitude").innerHTML = jsonObj.results[0].geometry.location.lat;
        document.getElementById("Longitude").innerHTML = jsonObj.results[0].geometry.location.lng;
        document.getElementById("Address").innerHTML = jsonObj.results[0].formatted_address;
